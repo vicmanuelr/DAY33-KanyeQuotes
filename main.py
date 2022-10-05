@@ -5,7 +5,8 @@ def get_quote():
     request = requests.get(url="https://api.kanye.rest/")
     request.raise_for_status()
     data = request.json()
-    canvas.itemconfigure(tagOrId=quote_text, text=f"{data['quote']}")
+    quote = data["quote"]
+    canvas.itemconfigure(tagOrId=quote_text, text=f"{quote}")
 
 
 window = Tk()
